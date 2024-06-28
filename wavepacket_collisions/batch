@@ -1,0 +1,14 @@
+#!/bin/bash
+## Script for PI cluster symmetry:
+#SBATCH --partition=defq
+#SBATCH --cpus-per-task=20
+#SBATCH --exclusive
+#SBATCH --time=10:00:00
+#SBATCH --mem=180g
+#SBATCH -J wp
+
+module load jupyter
+module load python/3.7
+
+jupyter nbconvert --execute decay_all_space_fluct.ipynb --ExecutePreprocessor.timeout=-1
+

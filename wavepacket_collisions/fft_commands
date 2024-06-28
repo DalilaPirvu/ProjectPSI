@@ -1,0 +1,8 @@
+perl -i -pe 's/[ \t]+//g' *_fft_fields.dat
+
+vim *_fft_fields.dat
+
+:args *_fft_fields.dat
+:argdo %s/)(/)	(/ge | update
+
+
